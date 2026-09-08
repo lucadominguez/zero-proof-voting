@@ -1,0 +1,41 @@
+{
+  "title": "Zero-Proof Voting",
+  "eyebrow": "Concept notebook",
+  "subtitle": [
+    "A design brief for",
+    "privacy-aware voting protocols."
+  ],
+  "status": "Concept only \u00b7 No runnable implementation",
+  "motif": "layers",
+  "accent": "#535F92",
+  "footer": "zero-proof-voting",
+  "overview_title": "The proposed workflow",
+  "overview_subtitle": "A map of the design questions, not a claim that these components are implemented.",
+  "nodes": [
+    {
+      "icon": "layers",
+      "title": "Specify eligibility",
+      "lines": [
+        "Credentials and voting rules.",
+        "Unresolved design work."
+      ]
+    },
+    {
+      "icon": "scope",
+      "title": "Define proof obligations",
+      "lines": [
+        "Validity and privacy model.",
+        "No circuits or audit."
+      ]
+    },
+    {
+      "icon": "library",
+      "title": "Verify a tally",
+      "lines": [
+        "Proposed public checks.",
+        "Not an election service."
+      ]
+    }
+  ],
+  "caveat": "Planning illustration. No implementation, performance result or security guarantee is implied."
+}

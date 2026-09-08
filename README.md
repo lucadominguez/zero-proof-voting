@@ -1,47 +1,39 @@
+<p align="center"><img src="assets/presentation/banner.png" alt="Zero-Proof Voting: concept notebook" width="900"></p>
+
 # Zero-Proof Voting
 
-**Verifiable, anonymous voting with configurable governance structures — powered by zero-knowledge proofs**
+A concept for verifiable voting with configurable governance rules and zero-knowledge proofs.
 
-Every election, poll, and DAO vote faces the same tension: verifiability vs privacy. Zero-Proof Voting resolves this using ZK-SNARKs/STARKs — every vote is provably counted while remaining cryptographically anonymous.
+**Status: concept only.** This repository is a project brief, not an available
+product. Proposed components below are not implemented features.
 
-## Concept
+![Proposed workflow and its unresolved design questions](assets/presentation/overview.png)
 
-A voter generates a zero-knowledge proof that their vote is valid (one person, one vote; eligible voter; correctly formatted ballot) without revealing which option they chose. The system verifies the proof, tallies the encrypted votes, and publishes a verifiable result — all without anyone learning individual voting choices.
+*Conceptual illustration. [Editable artwork and render instructions](scripts/artwork/README.md).*
 
-## Configurable Voting Structures
+## What is here
 
-Not every vote is "one person, one vote." The system supports:
+A design brief. There are no circuits, proof-system parameters, contracts,
+SDKs, security audits or runnable voting services in this repository. Do not
+use it to conduct a real election or protect sensitive ballots.
 
-- **Quadratic voting** — voters allocate credits with diminishing returns
-- **Ranked choice** — instant runoff, Condorcet methods
-- **Conviction voting** — continuously accruing vote weight over time
-- **Delegation / liquid democracy** — transitive vote delegation
-- **Weighted voting** — stake-weighted, reputation-weighted, contribution-weighted
-- **Custom threshold schemes** — supermajority, quorum, multi-signature gates
+## Proposed direction
 
-## Planned Features
+The brief separates voter eligibility, ballot validity, tallying and result
+verification. Candidate governance rules include ranked choice, quadratic
+credits, delegation and weighted voting. Supporting one rule does not establish
+that the others compose safely with the same proof system.
 
-- **ZK circuit library** — pre-built circuits for common voting schemes
-- **Configurable governance engine** — define your voting structure as config, not code
-- **Verifiable tally** — anyone can verify the count without seeing individual votes
-- **Privacy guarantees** — ballot secrecy even against a malicious aggregator
-- **SDK** — embed zero-proof voting into any application
+A zero-knowledge proof alone does not establish one-person-one-vote, coercion
+resistance, endpoint security or a trustworthy enrollment process. The protocol
+would need an explicit threat model, formal definitions and independent review
+before making privacy or correctness claims.
 
-## Tech Stack (planned)
+Circom, Halo2, Noir, Rust and TypeScript are possible implementation choices,
+not dependencies or evidence of an implemented cryptosystem.
 
-- Rust (ZK circuits, performance-critical cryptography)
-- Circom / Halo2 / Noir for ZK circuit development
-- TypeScript SDK for integration
-- Smart contract templates (Solidity, for on-chain governance)
+## Useful feedback
 
-## Status
-
-🚧 Architecture and circuit design phase.
-
-## Use Cases
-
-- Corporate governance (shareholder voting with privacy)
-- DAO governance (beyond token-weighted)
-- Academic peer review
-- Sensitive organizational decisions
-- Public elections (with appropriate physical identity layer)
+Contribute a bounded protocol question, a threat-model critique, or a reference
+to an existing design. Keep proposed properties separate from proven ones.
+No security guarantee is made by this repository or its illustrations.
